@@ -14,13 +14,13 @@ class VehiclePageController: UIViewController {
     let category = ["Standard", "Prestige", "SUV"]
     let helper = Database()
     var carItems = [CarModel]()
-    //    var searchedCar = [CarModel]()
-    //    var searching = false
     let realm = try! Realm()
     let searchController = UISearchController(searchResultsController: nil)
     var categoryCounts = [String: Int]()
+    //    var searchedCar = [CarModel]()
+    //    var searching = false
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Car Rental"
@@ -40,30 +40,20 @@ class VehiclePageController: UIViewController {
 extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         category.count
-        //        if searching {
-        //            return searchedCar.count
-        //        } else {
-        //            return category.count
-        //        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCarCategories", for: indexPath) as! ListCarCategories
         cell.carCategoryImageView.image = UIImage(named: category[indexPath.item])
-//        cell.carCategory.text = category[indexPath.row]
         let category = CarCategory.allCases[indexPath.item]
         cell.carCategory.text = category.rawValue
         if let count = categoryCounts[category.rawValue] {
-                cell.carCount.text = "\(count)"
-            } else {
-                cell.carCount.text = "0"
-            }
+            cell.carCount.text = "\(count)"
+        } else {
+            cell.carCount.text = "0"
+        }
         return cell
-        //        if searching {
-        //            cell.imageView.image = UIImage(named: carItems[indexPath.item].name ?? "")
-        //        } else {
-        //            cell.imageView.image = UIImage(named: category[indexPath.item])
-        //        }
+
     }
     
     
