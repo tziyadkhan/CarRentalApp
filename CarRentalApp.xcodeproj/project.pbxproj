@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		904103352AE5444F00309076 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103342AE5444F00309076 /* TabBarController.swift */; };
+		9041033A2AE54CEA00309076 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103392AE54CEA00309076 /* Database.swift */; };
+		9041033C2AE54D1E00309076 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041033B2AE54D1E00309076 /* CarInfo.swift */; };
+		9041033F2AE54E2E00309076 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9041033E2AE54E2E00309076 /* Realm */; };
+		904103412AE54E2E00309076 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 904103402AE54E2E00309076 /* RealmSwift */; };
+		904103462AE54F4000309076 /* VehiclePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103452AE54F4000309076 /* VehiclePageController.swift */; };
+		904103482AE54F4F00309076 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103472AE54F4F00309076 /* SearchPageController.swift */; };
+		9041034A2AE54F5A00309076 /* AccountPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103492AE54F5A00309076 /* AccountPageController.swift */; };
+		9041034F2AE55A4B00309076 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041034E2AE55A4B00309076 /* CarModel.swift */; };
+		9041035B2AE581D800309076 /* ListCarCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041035A2AE581D800309076 /* ListCarCategories.swift */; };
 		90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C01A6B2AE532B100B73F0F /* LoginPageController.swift */; };
 		FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309B2AE3A6040004F029 /* AppDelegate.swift */; };
 		FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */; };
@@ -19,6 +28,13 @@
 
 /* Begin PBXFileReference section */
 		904103342AE5444F00309076 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		904103392AE54CEA00309076 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9041033B2AE54D1E00309076 /* CarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
+		904103452AE54F4000309076 /* VehiclePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePageController.swift; sourceTree = "<group>"; };
+		904103472AE54F4F00309076 /* SearchPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
+		904103492AE54F5A00309076 /* AccountPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageController.swift; sourceTree = "<group>"; };
+		9041034E2AE55A4B00309076 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		9041035A2AE581D800309076 /* ListCarCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarCategories.swift; sourceTree = "<group>"; };
 		90C01A6B2AE532B100B73F0F /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		FE9D30982AE3A6040004F029 /* CarRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9D309B2AE3A6040004F029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904103412AE54E2E00309076 /* RealmSwift in Frameworks */,
+				9041033F2AE54E2E00309076 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +65,51 @@
 				904103342AE5444F00309076 /* TabBarController.swift */,
 			);
 			path = "Tab Bar ";
+			sourceTree = "<group>";
+		};
+		904103362AE54B8300309076 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9041034E2AE55A4B00309076 /* CarModel.swift */,
+				904103392AE54CEA00309076 /* Database.swift */,
+				9041033B2AE54D1E00309076 /* CarInfo.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		904103422AE54EFD00309076 /* Vehicle Page Controller */ = {
+			isa = PBXGroup;
+			children = (
+				904103452AE54F4000309076 /* VehiclePageController.swift */,
+				9041035A2AE581D800309076 /* ListCarCategories.swift */,
+			);
+			path = "Vehicle Page Controller";
+			sourceTree = "<group>";
+		};
+		904103432AE54F1F00309076 /* Search Page Controller */ = {
+			isa = PBXGroup;
+			children = (
+				904103472AE54F4F00309076 /* SearchPageController.swift */,
+			);
+			path = "Search Page Controller";
+			sourceTree = "<group>";
+		};
+		904103442AE54F2800309076 /* Account Page Controller */ = {
+			isa = PBXGroup;
+			children = (
+				904103492AE54F5A00309076 /* AccountPageController.swift */,
+			);
+			path = "Account Page Controller";
+			sourceTree = "<group>";
+		};
+		9041034B2AE54F6200309076 /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				904103422AE54EFD00309076 /* Vehicle Page Controller */,
+				904103432AE54F1F00309076 /* Search Page Controller */,
+				904103442AE54F2800309076 /* Account Page Controller */,
+			);
+			path = "Home Page";
 			sourceTree = "<group>";
 		};
 		90C01A6A2AE532A200B73F0F /* Login Page */ = {
@@ -77,10 +140,12 @@
 			isa = PBXGroup;
 			children = (
 				90C01A6A2AE532A200B73F0F /* Login Page */,
+				9041034B2AE54F6200309076 /* Home Page */,
+				904103362AE54B8300309076 /* Data Manager */,
+				904103332AE5442200309076 /* Tab Bar  */,
 				FE9D309B2AE3A6040004F029 /* AppDelegate.swift */,
 				FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */,
 				FE9D30A12AE3A6040004F029 /* Main.storyboard */,
-				904103332AE5442200309076 /* Tab Bar  */,
 				FE9D30A72AE3A6060004F029 /* Assets.xcassets */,
 				FE9D30A92AE3A6060004F029 /* LaunchScreen.storyboard */,
 				FE9D30AC2AE3A6060004F029 /* Info.plist */,
@@ -105,6 +170,10 @@
 			dependencies = (
 			);
 			name = CarRentalApp;
+			packageProductDependencies = (
+				9041033E2AE54E2E00309076 /* Realm */,
+				904103402AE54E2E00309076 /* RealmSwift */,
+			);
 			productName = CarRentalApp;
 			productReference = FE9D30982AE3A6040004F029 /* CarRentalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +202,9 @@
 				Base,
 			);
 			mainGroup = FE9D308F2AE3A6040004F029;
+			packageReferences = (
+				9041033D2AE54E2E00309076 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = FE9D30992AE3A6040004F029 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,11 +232,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9041033A2AE54CEA00309076 /* Database.swift in Sources */,
+				9041033C2AE54D1E00309076 /* CarInfo.swift in Sources */,
 				90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */,
 				FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */,
+				9041034A2AE54F5A00309076 /* AccountPageController.swift in Sources */,
+				9041034F2AE55A4B00309076 /* CarModel.swift in Sources */,
 				904103352AE5444F00309076 /* TabBarController.swift in Sources */,
 				FE9D30A62AE3A6040004F029 /* CarRentalApp.xcdatamodeld in Sources */,
+				9041035B2AE581D800309076 /* ListCarCategories.swift in Sources */,
 				FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */,
+				904103462AE54F4000309076 /* VehiclePageController.swift in Sources */,
+				904103482AE54F4F00309076 /* SearchPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +466,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9041033D2AE54E2E00309076 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9041033E2AE54E2E00309076 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9041033D2AE54E2E00309076 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		904103402AE54E2E00309076 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9041033D2AE54E2E00309076 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FE9D30A42AE3A6040004F029 /* CarRentalApp.xcdatamodeld */ = {
