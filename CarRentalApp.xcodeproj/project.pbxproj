@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904103352AE5444F00309076 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103342AE5444F00309076 /* TabBarController.swift */; };
+		90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C01A6B2AE532B100B73F0F /* LoginPageController.swift */; };
 		FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309B2AE3A6040004F029 /* AppDelegate.swift */; };
 		FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */; };
-		FE9D30A02AE3A6040004F029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309F2AE3A6040004F029 /* ViewController.swift */; };
 		FE9D30A32AE3A6040004F029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9D30A12AE3A6040004F029 /* Main.storyboard */; };
 		FE9D30A62AE3A6040004F029 /* CarRentalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE9D30A42AE3A6040004F029 /* CarRentalApp.xcdatamodeld */; };
 		FE9D30A82AE3A6060004F029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9D30A72AE3A6060004F029 /* Assets.xcassets */; };
@@ -17,10 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		904103342AE5444F00309076 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		90C01A6B2AE532B100B73F0F /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		FE9D30982AE3A6040004F029 /* CarRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9D309B2AE3A6040004F029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE9D309F2AE3A6040004F029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE9D30A22AE3A6040004F029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE9D30A52AE3A6040004F029 /* CarRentalApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarRentalApp.xcdatamodel; sourceTree = "<group>"; };
 		FE9D30A72AE3A6060004F029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904103332AE5442200309076 /* Tab Bar  */ = {
+			isa = PBXGroup;
+			children = (
+				904103342AE5444F00309076 /* TabBarController.swift */,
+			);
+			path = "Tab Bar ";
+			sourceTree = "<group>";
+		};
+		90C01A6A2AE532A200B73F0F /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				90C01A6B2AE532B100B73F0F /* LoginPageController.swift */,
+			);
+			path = "Login Page";
+			sourceTree = "<group>";
+		};
 		FE9D308F2AE3A6040004F029 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +76,11 @@
 		FE9D309A2AE3A6040004F029 /* CarRentalApp */ = {
 			isa = PBXGroup;
 			children = (
+				90C01A6A2AE532A200B73F0F /* Login Page */,
 				FE9D309B2AE3A6040004F029 /* AppDelegate.swift */,
 				FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */,
-				FE9D309F2AE3A6040004F029 /* ViewController.swift */,
 				FE9D30A12AE3A6040004F029 /* Main.storyboard */,
+				904103332AE5442200309076 /* Tab Bar  */,
 				FE9D30A72AE3A6060004F029 /* Assets.xcassets */,
 				FE9D30A92AE3A6060004F029 /* LaunchScreen.storyboard */,
 				FE9D30AC2AE3A6060004F029 /* Info.plist */,
@@ -141,8 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE9D30A02AE3A6040004F029 /* ViewController.swift in Sources */,
+				90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */,
 				FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */,
+				904103352AE5444F00309076 /* TabBarController.swift in Sources */,
 				FE9D30A62AE3A6040004F029 /* CarRentalApp.xcdatamodeld in Sources */,
 				FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */,
 			);
