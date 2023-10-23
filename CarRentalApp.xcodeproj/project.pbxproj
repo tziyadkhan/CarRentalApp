@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		904103352AE5444F00309076 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103342AE5444F00309076 /* TabBarController.swift */; };
 		9041033A2AE54CEA00309076 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103392AE54CEA00309076 /* Database.swift */; };
-		9041033C2AE54D1E00309076 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041033B2AE54D1E00309076 /* CarInfo.swift */; };
 		9041033F2AE54E2E00309076 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9041033E2AE54E2E00309076 /* Realm */; };
 		904103412AE54E2E00309076 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 904103402AE54E2E00309076 /* RealmSwift */; };
 		904103462AE54F4000309076 /* VehiclePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103452AE54F4000309076 /* VehiclePageController.swift */; };
 		904103482AE54F4F00309076 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103472AE54F4F00309076 /* SearchPageController.swift */; };
 		9041034A2AE54F5A00309076 /* AccountPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904103492AE54F5A00309076 /* AccountPageController.swift */; };
 		9041034F2AE55A4B00309076 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041034E2AE55A4B00309076 /* CarModel.swift */; };
-		9041035B2AE581D800309076 /* ListCarCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041035A2AE581D800309076 /* ListCarCategories.swift */; };
 		9063EA8C2AE66452001AFEB9 /* CarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063EA8A2AE66452001AFEB9 /* CarListCell.swift */; };
 		9063EA8D2AE66452001AFEB9 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9063EA8B2AE66452001AFEB9 /* CarListCell.xib */; };
 		90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C01A6B2AE532B100B73F0F /* LoginPageController.swift */; };
+		90F67C782AE6A58900408F4F /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F67C762AE6A58900408F4F /* CategoryListCell.swift */; };
+		90F67C792AE6A58900408F4F /* CategoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F67C772AE6A58900408F4F /* CategoryListCell.xib */; };
 		FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309B2AE3A6040004F029 /* AppDelegate.swift */; };
 		FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */; };
 		FE9D30A32AE3A6040004F029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9D30A12AE3A6040004F029 /* Main.storyboard */; };
@@ -31,15 +31,15 @@
 /* Begin PBXFileReference section */
 		904103342AE5444F00309076 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		904103392AE54CEA00309076 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		9041033B2AE54D1E00309076 /* CarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
 		904103452AE54F4000309076 /* VehiclePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePageController.swift; sourceTree = "<group>"; };
 		904103472AE54F4F00309076 /* SearchPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		904103492AE54F5A00309076 /* AccountPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPageController.swift; sourceTree = "<group>"; };
 		9041034E2AE55A4B00309076 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
-		9041035A2AE581D800309076 /* ListCarCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarCategories.swift; sourceTree = "<group>"; };
 		9063EA8A2AE66452001AFEB9 /* CarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCell.swift; sourceTree = "<group>"; };
 		9063EA8B2AE66452001AFEB9 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
 		90C01A6B2AE532B100B73F0F /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
+		90F67C762AE6A58900408F4F /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
+		90F67C772AE6A58900408F4F /* CategoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListCell.xib; sourceTree = "<group>"; };
 		FE9D30982AE3A6040004F029 /* CarRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9D309B2AE3A6040004F029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE9D309D2AE3A6040004F029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 			children = (
 				9041034E2AE55A4B00309076 /* CarModel.swift */,
 				904103392AE54CEA00309076 /* Database.swift */,
-				9041033B2AE54D1E00309076 /* CarInfo.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -84,9 +83,9 @@
 		904103422AE54EFD00309076 /* Vehicle Page Controller */ = {
 			isa = PBXGroup;
 			children = (
+				90F67C752AE6A57700408F4F /* CategoryListCell */,
 				9063EA892AE66440001AFEB9 /* CarListCell */,
 				904103452AE54F4000309076 /* VehiclePageController.swift */,
-				9041035A2AE581D800309076 /* ListCarCategories.swift */,
 			);
 			path = "Vehicle Page Controller";
 			sourceTree = "<group>";
@@ -132,6 +131,15 @@
 				90C01A6B2AE532B100B73F0F /* LoginPageController.swift */,
 			);
 			path = "Login Page";
+			sourceTree = "<group>";
+		};
+		90F67C752AE6A57700408F4F /* CategoryListCell */ = {
+			isa = PBXGroup;
+			children = (
+				90F67C762AE6A58900408F4F /* CategoryListCell.swift */,
+				90F67C772AE6A58900408F4F /* CategoryListCell.xib */,
+			);
+			path = CategoryListCell;
 			sourceTree = "<group>";
 		};
 		FE9D308F2AE3A6040004F029 = {
@@ -234,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9D30AB2AE3A6060004F029 /* LaunchScreen.storyboard in Resources */,
+				90F67C792AE6A58900408F4F /* CategoryListCell.xib in Resources */,
 				FE9D30A82AE3A6060004F029 /* Assets.xcassets in Resources */,
 				9063EA8D2AE66452001AFEB9 /* CarListCell.xib in Resources */,
 				FE9D30A32AE3A6040004F029 /* Main.storyboard in Resources */,
@@ -248,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9041033A2AE54CEA00309076 /* Database.swift in Sources */,
-				9041033C2AE54D1E00309076 /* CarInfo.swift in Sources */,
 				90C01A6C2AE532B100B73F0F /* LoginPageController.swift in Sources */,
 				FE9D309C2AE3A6040004F029 /* AppDelegate.swift in Sources */,
 				9041034A2AE54F5A00309076 /* AccountPageController.swift in Sources */,
@@ -256,7 +264,7 @@
 				9041034F2AE55A4B00309076 /* CarModel.swift in Sources */,
 				904103352AE5444F00309076 /* TabBarController.swift in Sources */,
 				FE9D30A62AE3A6040004F029 /* CarRentalApp.xcdatamodeld in Sources */,
-				9041035B2AE581D800309076 /* ListCarCategories.swift in Sources */,
+				90F67C782AE6A58900408F4F /* CategoryListCell.swift in Sources */,
 				FE9D309E2AE3A6040004F029 /* SceneDelegate.swift in Sources */,
 				904103462AE54F4000309076 /* VehiclePageController.swift in Sources */,
 				904103482AE54F4F00309076 /* SearchPageController.swift in Sources */,

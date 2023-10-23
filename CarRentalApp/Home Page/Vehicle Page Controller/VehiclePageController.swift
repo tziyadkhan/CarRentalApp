@@ -10,26 +10,26 @@ import RealmSwift
 
 class VehiclePageController: UIViewController {
     
-
-
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var carCollectionView: UICollectionView!
     let category = ["Standard", "Prestige", "SUV"]
     let helper = Database()
     var carItems = [CarModel]()
     let realm = try! Realm()
     let searchController = UISearchController(searchResultsController: nil)
     var categoryCounts = [String: Int]()
-    //    var searchedCar = [CarModel]()
-    //    var searching = false
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Car Rental"
         helper.getFilePath()
         fetchItems()
         configureSearchController()
-//        collectionView.register(UINib(nibName: "CarListCell", bundle: nil), forCellWithReuseIdentifier: "CarListCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCell")
+        carCollectionView.register(UINib(nibName: "CarListCell", bundle: nil), forCellWithReuseIdentifier: "CarListCell")
+        
         for category in CarCategory.allCases {
             let categoryCars = realm.objects(CarModel.self).filter("category = %@", category.rawValue)
             categoryCounts[category.rawValue] = categoryCars.count
@@ -42,30 +42,38 @@ class VehiclePageController: UIViewController {
 extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         category.count
+        //        if collectionView == self.collectionView {
+        //            return category.count
+        //        } else if collectionView == carCollectionView {
+        //            return carItems.count
+        //        }
+        //        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCarCategories", for: indexPath) as! ListCarCategories
-        cell.carCategoryImageView.image = UIImage(named: category[indexPath.item])
-        let category = CarCategory.allCases[indexPath.item]
-        cell.carCategory.text = category.rawValue
-        if let count = categoryCounts[category.rawValue] {
-            cell.carCount.text = "\(count)"
-        } else {
-            cell.carCount.text = "0"
-        }
         
-//        if (collectionView == collectionView2) {
-//            let cell2 = collectionView2.dequeueReusableCell(withReuseIdentifier: "ListCarsCell", for: indexPath) as! ListCarsCell
-//            cell2.background.backgroundColor = UIColor.blue
-//            return cell2
-//        }
-        return cell
-
-
+        if collectionView == carCollectionView {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarListCell", for: indexPath) as! CarListCell
+                cell.carNameLabel.text = carItems[indexPath.row].name
+                cell.carImageView.image = UIImage(named: carItems[indexPath.row].model ?? "")
+                cell.carModelLabel.text = carItems[indexPath.row].model
+                cell.carPriceLabel.text = carItems[indexPath.row].price
+                cell.carEngineLabel.text = carItems[indexPath.row].engine
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryListCell", for: indexPath) as! CategoryListCell
+                cell.carCategoryImage.image = UIImage(named: category[indexPath.item])
+                let category = CarCategory.allCases[indexPath.item]
+                cell.carCategoryLabel.text = category.rawValue
+                if let count = categoryCounts[category.rawValue] {
+                    cell.carCategoryCount.text = "\(count)"
+                } else {
+                    cell.carCategoryCount.text = "0"
+                }
+                return cell
+            }
     }
-    
-    
+
 }
 
 extension VehiclePageController {
@@ -76,17 +84,6 @@ extension VehiclePageController {
         collectionView.reloadData()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 extension VehiclePageController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -107,31 +104,4 @@ extension VehiclePageController: UISearchResultsUpdating {
         //        definesPresentationContext = true
     }
 }
-//
-//    func updateSearchResults(for searchController: UISearchController) {
-//
-//        let searchText = searchController.searchBar.text
-//        if (searchText != nil) {
-//            searching = true
-//            searchedCar.removeAll()
-//
-//            for car in carItems {
-//                if ((car.name?.lowercased().contains(searchText?.lowercased() ?? "")) != nil) {
-//                    searchedCar.append(car)
-//                }
-//            }
-//        } else {
-//            searching = false
-//            searchedCar.removeAll()
-//            searchedCar = carItems
-//        }
-//
-//        collectionView.reloadData()
-//    }
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        searching = false
-//        searchedCar.removeAll()
-//        collectionView.reloadData()
-//    }
-//
-//}
+

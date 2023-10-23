@@ -9,11 +9,11 @@ import Foundation
 import RealmSwift
 
 class CarModel: Object {
-    @Persisted var name: String?
-    @Persisted var model: String?
-    @Persisted var engine: String?
-    @Persisted var price: String?
-    @Persisted var category: String = CarCategory.standard.rawValue
+    @Persisted var name: String? //Toyota
+    @Persisted var model: String? // Camry
+    @Persisted var engine: String? // 2.0T
+    @Persisted var price: String? // 230$
+    @Persisted var category: String = CarCategory.standard.rawValue // Prestige
 }
 
 enum CarCategory: String, CaseIterable {

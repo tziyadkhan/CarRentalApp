@@ -15,6 +15,7 @@ class CarListCell: UICollectionViewCell {
     @IBOutlet weak var carNameLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var background: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 20
