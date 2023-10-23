@@ -93,10 +93,36 @@
                     <view key="view" contentMode="scaleToFill" id="mR4-mw-Yua">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vd4-AP-K2f">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="EFh-1X-y6Q">
+                                    <size key="itemSize" width="360" height="360"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kFu-s3-foh" id="zkm-NP-8aJ"/>
+                                    <outlet property="delegate" destination="kFu-s3-foh" id="vJ2-Gl-x2J"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="c4b-Ny-HH0"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="c4b-Ny-HH0" firstAttribute="trailing" secondItem="Vd4-AP-K2f" secondAttribute="trailing" id="F88-I9-Jzy"/>
+                            <constraint firstItem="c4b-Ny-HH0" firstAttribute="bottom" secondItem="Vd4-AP-K2f" secondAttribute="bottom" id="Qzl-4s-PFZ"/>
+                            <constraint firstItem="Vd4-AP-K2f" firstAttribute="leading" secondItem="c4b-Ny-HH0" secondAttribute="leading" id="dWu-vC-sNV"/>
+                            <constraint firstItem="Vd4-AP-K2f" firstAttribute="top" secondItem="c4b-Ny-HH0" secondAttribute="top" id="vS0-ob-Wvb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i1p-Oa-rCN"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Vd4-AP-K2f" id="2ax-Yt-Ciy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUV-wc-wYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,7 +229,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sIu-u3-6Gg"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="rvJ-tb-T1g"/>
                     <connections>
@@ -297,14 +323,11 @@
         <image name="launchBackground" width="414" height="896"/>
         <image name="searchTab" width="28" height="28"/>
         <image name="vehiclesTab" width="28" height="28"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

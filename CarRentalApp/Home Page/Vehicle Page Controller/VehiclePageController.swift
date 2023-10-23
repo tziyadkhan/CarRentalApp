@@ -10,6 +10,8 @@ import RealmSwift
 
 class VehiclePageController: UIViewController {
     
+
+
     @IBOutlet weak var collectionView: UICollectionView!
     let category = ["Standard", "Prestige", "SUV"]
     let helper = Database()
@@ -27,7 +29,7 @@ class VehiclePageController: UIViewController {
         helper.getFilePath()
         fetchItems()
         configureSearchController()
-        
+//        collectionView.register(UINib(nibName: "CarListCell", bundle: nil), forCellWithReuseIdentifier: "CarListCell")
         for category in CarCategory.allCases {
             let categoryCars = realm.objects(CarModel.self).filter("category = %@", category.rawValue)
             categoryCounts[category.rawValue] = categoryCars.count
@@ -52,7 +54,14 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
         } else {
             cell.carCount.text = "0"
         }
+        
+//        if (collectionView == collectionView2) {
+//            let cell2 = collectionView2.dequeueReusableCell(withReuseIdentifier: "ListCarsCell", for: indexPath) as! ListCarsCell
+//            cell2.background.backgroundColor = UIColor.blue
+//            return cell2
+//        }
         return cell
+
 
     }
     
@@ -67,6 +76,17 @@ extension VehiclePageController {
         collectionView.reloadData()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 extension VehiclePageController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {

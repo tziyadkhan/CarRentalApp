@@ -10,6 +10,7 @@ import RealmSwift
 
 class CarModel: Object {
     @Persisted var name: String?
+    @Persisted var model: String?
     @Persisted var engine: String?
     @Persisted var price: String?
     @Persisted var category: String = CarCategory.standard.rawValue
