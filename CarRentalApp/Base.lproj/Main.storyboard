@@ -86,48 +86,6 @@
             </objects>
             <point key="canvasLocation" x="823.66412213740455" y="11.971830985915494"/>
         </scene>
-        <!--Search Page Controller-->
-        <scene sceneID="W0N-jm-fJg">
-            <objects>
-                <viewController storyboardIdentifier="SearchPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kFu-s3-foh" customClass="SearchPageController" customModule="CarRentalApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mR4-mw-Yua">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vd4-AP-K2f">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="EFh-1X-y6Q">
-                                    <size key="itemSize" width="360" height="360"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="kFu-s3-foh" id="zkm-NP-8aJ"/>
-                                    <outlet property="delegate" destination="kFu-s3-foh" id="vJ2-Gl-x2J"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="c4b-Ny-HH0"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                        <constraints>
-                            <constraint firstItem="c4b-Ny-HH0" firstAttribute="trailing" secondItem="Vd4-AP-K2f" secondAttribute="trailing" id="F88-I9-Jzy"/>
-                            <constraint firstItem="c4b-Ny-HH0" firstAttribute="bottom" secondItem="Vd4-AP-K2f" secondAttribute="bottom" id="Qzl-4s-PFZ"/>
-                            <constraint firstItem="Vd4-AP-K2f" firstAttribute="leading" secondItem="c4b-Ny-HH0" secondAttribute="leading" id="dWu-vC-sNV"/>
-                            <constraint firstItem="Vd4-AP-K2f" firstAttribute="top" secondItem="c4b-Ny-HH0" secondAttribute="top" id="vS0-ob-Wvb"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="i1p-Oa-rCN"/>
-                    <connections>
-                        <outlet property="collectionView" destination="Vd4-AP-K2f" id="2ax-Yt-Ciy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUV-wc-wYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1985" y="770"/>
-        </scene>
         <!--Account Page Controller-->
         <scene sceneID="TN6-ev-LQG">
             <objects>
@@ -142,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGx-0M-a6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3483" y="770"/>
+            <point key="canvasLocation" x="4408.3969465648852" y="769.71830985915494"/>
         </scene>
         <!--Vehicle Page Controller-->
         <scene sceneID="ROq-0O-hcg">
@@ -251,8 +209,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="gaX-kS-KsO" kind="relationship" relationship="viewControllers" id="Q0u-4P-h9Z"/>
-                        <segue destination="7nQ-iX-Frh" kind="relationship" relationship="viewControllers" id="1tQ-eV-dMg"/>
                         <segue destination="BRh-yW-kfj" kind="relationship" relationship="viewControllers" id="Rfx-3t-WQP"/>
+                        <segue destination="wGq-ky-UxV" kind="relationship" relationship="viewControllers" id="Jfc-pG-Z1j"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSc-9S-vpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,24 +236,47 @@
             </objects>
             <point key="canvasLocation" x="-129" y="770"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="Mma-qL-LnA">
+        <!--Search Page Controller-->
+        <scene sceneID="tqu-YS-PaI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7nQ-iX-Frh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="searchTab" id="geR-XB-Gem"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TC-y3-A7O">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController storyboardIdentifier="SearchPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zqr-ib-7Z8" customClass="SearchPageController" customModule="CarRentalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HKj-ej-c7U">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-cX-Rp2">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="kff-pK-2Cc">
+                                    <size key="itemSize" width="360" height="360"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Zqr-ib-7Z8" id="IsY-zh-xvE"/>
+                                    <outlet property="delegate" destination="Zqr-ib-7Z8" id="Ax8-3m-itg"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nNW-iO-RII"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="top" secondItem="nNW-iO-RII" secondAttribute="top" id="3hx-kd-Vxm"/>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="trailing" secondItem="nNW-iO-RII" secondAttribute="trailing" id="3p7-O6-KfW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1a7-cX-Rp2" secondAttribute="bottom" id="IgP-V0-r9F"/>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="leading" secondItem="nNW-iO-RII" secondAttribute="leading" id="JwZ-eM-bc4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fDv-x2-fcv"/>
                     <connections>
-                        <segue destination="kFu-s3-foh" kind="relationship" relationship="rootViewController" id="rBB-fe-OBQ"/>
+                        <outlet property="collectionView" destination="1a7-cX-Rp2" id="0iC-ah-cFB"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uZI-ji-UQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvy-01-ilE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="770"/>
+            <point key="canvasLocation" x="2100" y="769.71830985915494"/>
         </scene>
         <!--Account-->
         <scene sceneID="iTJ-a6-BK9">
@@ -314,7 +295,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mH-mr-wEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2769" y="770"/>
+            <point key="canvasLocation" x="3695.419847328244" y="769.71830985915494"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="TzM-si-lBM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wGq-ky-UxV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="searchTab" id="vDH-TY-onr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X1a-mV-59B">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zqr-ib-7Z8" kind="relationship" relationship="rootViewController" id="UcN-Ts-BTr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xu-MC-Co6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="770"/>
         </scene>
     </scenes>
     <resources>
