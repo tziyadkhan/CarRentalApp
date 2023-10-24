@@ -27,7 +27,7 @@ class LoginPageController: UIViewController {
     }
     
 }
-
+// Functions: LayerConfig, UserDefault, Notification, Login Check
 extension LoginPageController {
     func layerConfig() {
         emailTextField.layer.cornerRadius = 32
