@@ -19,6 +19,7 @@ class CategoryListCell: UICollectionViewCell {
         super.awakeFromNib()
 
         background.layer.cornerRadius = 20
+//        background.backgroundColor = .red
         
     }
 

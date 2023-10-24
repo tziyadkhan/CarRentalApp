@@ -12,24 +12,26 @@ class VehiclePageController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var carCollectionView: UICollectionView!
+    
     let category = ["Standard", "Prestige", "SUV"]
     let helper = Database()
     var carItems = [CarModel]()
     let realm = try! Realm()
     let searchController = UISearchController(searchResultsController: nil)
     var categoryCounts = [String: Int]()
-
+    var categorySelectedIndexPath: IndexPath?
+    var originalCarItems: [CarModel] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Car Rental"
         helper.getFilePath()
         fetchItems()
         configureSearchController()
-        collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCell")
         carCollectionView.register(UINib(nibName: "CarListCell", bundle: nil), forCellWithReuseIdentifier: "CarListCell")
-        
+        originalCarItems = carItems
         for category in CarCategory.allCases {
             let categoryCars = realm.objects(CarModel.self).filter("category = %@", category.rawValue)
             categoryCounts[category.rawValue] = categoryCars.count
@@ -41,17 +43,16 @@ class VehiclePageController: UIViewController {
 
 extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        category.count
-        //        if collectionView == self.collectionView {
-        //            return category.count
-        //        } else if collectionView == carCollectionView {
-        //            return carItems.count
-        //        }
-        //        return 0
+//        category.count
+                if collectionView == self.collectionView {
+                    return category.count
+                } else if collectionView == carCollectionView {
+                    return carItems.count
+                }
+                return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if collectionView == carCollectionView {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarListCell", for: indexPath) as! CarListCell
                 cell.carNameLabel.text = carItems[indexPath.row].name
@@ -74,8 +75,30 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
             }
     }
 
-}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = CarCategory.allCases[indexPath.item]
+        let filteredCars = originalCarItems.filter{ $0.category == category.rawValue }
 
+        if let previousIndexPath = categorySelectedIndexPath {         // Deselect the previously selected cell and reset its background color
+            collectionView.deselectItem(at: previousIndexPath, animated: true)
+            if let previousCell = collectionView.cellForItem(at: previousIndexPath) as? CategoryListCell {
+                previousCell.background.backgroundColor = .white // Change to the default background color
+            }
+        }
+
+        categorySelectedIndexPath = indexPath // Update the selected index path
+        
+        if let selectedCell = collectionView.cellForItem(at: indexPath) as? CategoryListCell {
+            selectedCell.background.backgroundColor = .blue         // Change the background color of the newly selected cell
+        }
+
+        carItems = filteredCars
+        carCollectionView.reloadData()
+        print("Selected category: \(category)")
+    }
+
+}
+// Realm
 extension VehiclePageController {
     func fetchItems() {
         carItems.removeAll()
@@ -85,6 +108,7 @@ extension VehiclePageController {
     }
 }
 
+// Search Bar
 extension VehiclePageController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         

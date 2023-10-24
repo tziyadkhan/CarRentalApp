@@ -6,24 +6,14 @@
 //
 
 import UIKit
-
+import Lottie
 class AccountPageController: UIViewController {
 
+    @IBOutlet weak var myAnimation: LottieAnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        myAnimation.play()
+        myAnimation.loopMode = .autoReverse
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }

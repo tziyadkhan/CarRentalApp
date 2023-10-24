@@ -92,14 +92,34 @@
                     <view key="view" contentMode="scaleToFill" id="9LZ-mm-1ww">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="LottieAnimationView" translatesAutoresizingMaskIntoConstraints="NO" id="8vV-ia-Tsn" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="46.666666666666657" y="276" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="98c-2b-x21"/>
+                                    <constraint firstAttribute="width" constant="300" id="qHW-Vs-qiR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="underConstruction"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="D3B-dA-vFf"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="8vV-ia-Tsn" firstAttribute="centerX" secondItem="D3B-dA-vFf" secondAttribute="centerX" id="Wc9-Vg-Qji"/>
+                            <constraint firstItem="8vV-ia-Tsn" firstAttribute="top" secondItem="D3B-dA-vFf" secondAttribute="top" constant="173" id="vIq-UE-hp2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="20f-xX-JqZ"/>
+                    <connections>
+                        <outlet property="myAnimation" destination="8vV-ia-Tsn" id="HB1-ky-JIS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGx-0M-a6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="770"/>
+            <point key="canvasLocation" x="3707.6335877862593" y="769.71830985915494"/>
         </scene>
         <!--Vehicle Page Controller-->
         <scene sceneID="ROq-0O-hcg">
@@ -285,9 +305,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
