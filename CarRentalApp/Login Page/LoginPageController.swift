@@ -21,7 +21,6 @@ class LoginPageController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func loginButton(_ sender: Any) {
         checkLogin()
     }
@@ -63,7 +62,7 @@ extension LoginPageController {
                 let controller = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 navigationController?.show(controller, sender: nil)
             } else {
-                showAlert(title: "Xəta", message: "Email və ya şifrə düzgün qeyd edilməyib")
+                showAlert(title: "Xəta", message: "Email və ya şifrə düzgün daxil edilməyib")
             }
         } else {
             showAlert(title: "Xəta", message: "Düzgün məlumatı daxil edin.")

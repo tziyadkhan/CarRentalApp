@@ -30,9 +30,9 @@ class VehiclePageController: UIViewController {
         title = "Car Rental"
         helper.getFilePath()
         fetchItems()
+        XibRegistration()
         configureSearchController()
         originalCarItems = carItems
-        XibRegistration()
         categoryCount()
     }
     
@@ -51,24 +51,23 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
                 }
                 return 0
             }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == carCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarListCell", for: indexPath) as! CarListCell
-            
+        
             if searching {
                 cell.carNameLabel.text = searchedCar[indexPath.row].name
                 cell.carModelLabel.text = searchedCar[indexPath.row].model
-                cell.carImageView.image = UIImage(named: searchedCar[indexPath.row].model ?? "")
+                cell.carImageView.image = UIImage(named: searchedCar[indexPath.row].model ?? "emptyCar")
                 cell.carPriceLabel.text = searchedCar[indexPath.row].price
                 cell.carEngineLabel.text = searchedCar[indexPath.row].engine
 
             } else {
                 cell.carNameLabel.text = carItems[indexPath.row].name
                 cell.carModelLabel.text = carItems[indexPath.row].model
-                cell.carImageView.image = UIImage(named: carItems[indexPath.row].model ?? "")
+                cell.carImageView.image = UIImage(named: carItems[indexPath.row].model ?? "emptyCar")
                 cell.carPriceLabel.text = carItems[indexPath.row].price
                 cell.carEngineLabel.text = carItems[indexPath.row].engine
             }
@@ -96,12 +95,17 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
             collectionView.deselectItem(at: previousIndexPath, animated: true)
             if let previousCell = collectionView.cellForItem(at: previousIndexPath) as? CategoryListCell {
                 previousCell.background.backgroundColor = .white // Change to the default background color
+                previousCell.carCategoryLabel.textColor = .black
+                previousCell.carCategoryCount.textColor = .lightGray
             }
         }
         categorySelectedIndexPath = indexPath // Update the selected index path
         
         if let selectedCell = collectionView.cellForItem(at: indexPath) as? CategoryListCell {
-            selectedCell.background.backgroundColor = .blue         // Change the background color of the newly selected cell
+            // Change the elements' colors of the newly selected cell
+            selectedCell.background.backgroundColor = .blue
+            selectedCell.carCategoryLabel.textColor = .white
+            selectedCell.carCategoryCount.textColor = .white
         }
         
         carItems = filteredCars
@@ -112,7 +116,8 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 // Functions
-extension VehiclePageController {
+extension VehiclePageController: UISearchResultsUpdating, UISearchBarDelegate {
+    
     //    REALM fetching the data
     func fetchItems() {
         carItems.removeAll()
@@ -120,11 +125,13 @@ extension VehiclePageController {
         carItems.append(contentsOf: data)
         collectionView.reloadData()
     }
+    
     // XIB Registration
     func XibRegistration() {
         collectionView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCell")
         carCollectionView.register(UINib(nibName: "CarListCell", bundle: nil), forCellWithReuseIdentifier: "CarListCell")
     }
+    
     // Category Counting
     func categoryCount() {
         for category in CarCategory.allCases {
@@ -132,10 +139,8 @@ extension VehiclePageController {
             categoryCounts[category.rawValue] = categoryCars.count
         }
     }
-}
-
-// SearchBar Configuration
-extension VehiclePageController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    // SearchBar Configuration
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
             searchedCar = carItems.filter { car in
@@ -165,4 +170,6 @@ extension VehiclePageController: UISearchResultsUpdating, UISearchBarDelegate {
         definesPresentationContext = true
     }
 }
+
+
 

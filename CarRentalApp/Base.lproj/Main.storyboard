@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="laP-qy-oPG">
-                                <rect key="frame" x="16" y="212" width="361" height="230"/>
+                                <rect key="frame" x="16" y="137" width="361" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="layoutMargins" id="nfk-wW-BF9">
@@ -145,8 +145,15 @@
                                     <outlet property="delegate" destination="qma-vw-9lo" id="jZE-BB-4wG"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available vehicles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htu-Ay-6U2">
+                                <rect key="frame" x="16" y="375" width="133.33333333333334" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-8p-J3G">
-                                <rect key="frame" x="16" y="450" width="361" height="319"/>
+                                <rect key="frame" x="16" y="404" width="361" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rn4-d7-hlL">
@@ -213,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="-129" y="770"/>
         </scene>
-        <!--Search Page Controller-->
+        <!--Search-->
         <scene sceneID="tqu-YS-PaI">
             <objects>
                 <viewController storyboardIdentifier="SearchPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zqr-ib-7Z8" customClass="SearchPageController" customModule="CarRentalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -222,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-cX-Rp2">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="202" width="393" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="kff-pK-2Cc">
                                     <size key="itemSize" width="360" height="360"/>
@@ -236,19 +243,46 @@
                                     <outlet property="delegate" destination="Zqr-ib-7Z8" id="Ax8-3m-itg"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a  a car" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I26-OL-B2W">
+                                <rect key="frame" x="16" y="130" width="361" height="64"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" searchField="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SGk-bk-oH0"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchTextField:" destination="Zqr-ib-7Z8" eventType="editingChanged" id="0Ej-z1-2I5"/>
+                                </connections>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="AVZ-Vs-0aS">
+                                <rect key="frame" x="335" y="149.66666666666666" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="5pN-ry-nVE"/>
+                                    <constraint firstAttribute="width" constant="25" id="Kwe-fu-VdE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nNW-iO-RII"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="top" secondItem="nNW-iO-RII" secondAttribute="top" id="3hx-kd-Vxm"/>
-                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="trailing" secondItem="nNW-iO-RII" secondAttribute="trailing" id="3p7-O6-KfW"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="1a7-cX-Rp2" secondAttribute="bottom" id="IgP-V0-r9F"/>
-                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="leading" secondItem="nNW-iO-RII" secondAttribute="leading" id="JwZ-eM-bc4"/>
+                            <constraint firstItem="AVZ-Vs-0aS" firstAttribute="centerY" secondItem="I26-OL-B2W" secondAttribute="centerY" id="2s4-Oh-7bP"/>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="top" secondItem="I26-OL-B2W" secondAttribute="bottom" constant="8" id="7Qm-1K-2Dv"/>
+                            <constraint firstItem="I26-OL-B2W" firstAttribute="top" secondItem="nNW-iO-RII" secondAttribute="top" constant="27" id="AJb-uy-mjP"/>
+                            <constraint firstItem="AVZ-Vs-0aS" firstAttribute="leading" secondItem="I26-OL-B2W" secondAttribute="trailing" constant="-42" id="b38-RP-mVP"/>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="leading" secondItem="nNW-iO-RII" secondAttribute="leading" id="eIy-o7-Ctr"/>
+                            <constraint firstItem="1a7-cX-Rp2" firstAttribute="bottom" secondItem="nNW-iO-RII" secondAttribute="bottom" id="hqa-ve-HRT"/>
+                            <constraint firstItem="I26-OL-B2W" firstAttribute="centerX" secondItem="1a7-cX-Rp2" secondAttribute="centerX" id="ieJ-0j-2qw"/>
+                            <constraint firstAttribute="trailing" secondItem="1a7-cX-Rp2" secondAttribute="trailing" id="pkx-9h-0J6"/>
+                            <constraint firstItem="I26-OL-B2W" firstAttribute="leading" secondItem="HKj-ej-c7U" secondAttribute="leadingMargin" id="zho-ru-tWb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fDv-x2-fcv"/>
+                    <navigationItem key="navigationItem" title="Search" id="fDv-x2-fcv"/>
                     <connections>
                         <outlet property="collectionView" destination="1a7-cX-Rp2" id="0iC-ah-cFB"/>
+                        <outlet property="searchTextField" destination="I26-OL-B2W" id="ylb-Rp-QpX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvy-01-ilE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,6 +332,7 @@
         <image name="accuntTab" width="29" height="28"/>
         <image name="driveitLogo" width="302" height="408"/>
         <image name="launchBackground" width="414" height="896"/>
+        <image name="search" width="60" height="60"/>
         <image name="searchTab" width="28" height="28"/>
         <image name="vehiclesTab" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
