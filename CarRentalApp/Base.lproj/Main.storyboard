@@ -129,6 +129,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a  a car" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-5d-P4D">
+                                <rect key="frame" x="16" y="131" width="361" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" searchField="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchTextField:" destination="Zqr-ib-7Z8" eventType="editingChanged" id="SB2-Yr-p0D"/>
+                                    <action selector="searchTextField:" destination="qma-vw-9lo" eventType="editingChanged" id="nbB-HK-koU"/>
+                                </connections>
+                            </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="laP-qy-oPG">
                                 <rect key="frame" x="16" y="203" width="361" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,20 +182,10 @@
                                     <outlet property="delegate" destination="qma-vw-9lo" id="0NP-TB-yOb"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a  a car" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-5d-P4D">
-                                <rect key="frame" x="16" y="131" width="361" height="64"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="tGV-XT-do6">
+                                <rect key="frame" x="335" y="151" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES" searchField="YES"/>
-                                </accessibility>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="searchTextField:" destination="Zqr-ib-7Z8" eventType="editingChanged" id="SB2-Yr-p0D"/>
-                                    <action selector="searchTextField:" destination="qma-vw-9lo" eventType="editingChanged" id="nbB-HK-koU"/>
-                                </connections>
-                            </textField>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sIu-u3-6Gg"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>

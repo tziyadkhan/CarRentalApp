@@ -32,7 +32,6 @@ class VehiclePageController: UIViewController {
         helper.getFilePath()
         fetchItems()
         XibRegistration()
-//        configureSearchController()
         setupSearchLayer()
         originalCarItems = carItems
         categoryCount()
@@ -166,35 +165,6 @@ extension VehiclePageController {
         searchTextField.tintColor = UIColor.black
     }
     
-    // SearchBar Configuration
-//    func updateSearchResults(for searchController: UISearchController) {
-//        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-//            searchedCar = carItems.filter { car in
-//                if let model = car.model {
-//                    return model.lowercased().contains(searchText.lowercased())
-//                }
-//                return false
-//            }
-//            searching = true
-//        } else {
-//            searchedCar.removeAll()
-//            searching = false
-//        }
-//        carCollectionView.reloadData()
-//    }
-    
-//    func configureSearchController() {
-//        searchController.searchBar.placeholder = "Search for a car"
-//        searchController.searchBar.layer.masksToBounds = true
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.delegate = self
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.enablesReturnKeyAutomatically = false
-//        searchController.searchBar.returnKeyType = UIReturnKeyType.done
-//        navigationItem.hidesSearchBarWhenScrolling = false
-//        navigationItem.searchController = searchController
-//        definesPresentationContext = true
-//    }
 }
 
 
