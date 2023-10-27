@@ -10,6 +10,7 @@ import RealmSwift
 
 class VehiclePageController: UIViewController {
     
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var carCollectionView: UICollectionView!
     
@@ -31,9 +32,28 @@ class VehiclePageController: UIViewController {
         helper.getFilePath()
         fetchItems()
         XibRegistration()
-        configureSearchController()
+//        configureSearchController()
+        setupSearchLayer()
         originalCarItems = carItems
         categoryCount()
+    }
+    
+    
+    @IBAction func searchTextField(_ sender: UITextField) {
+        if let searchText = sender.text, !searchText.isEmpty {
+                    searching = true
+                    searchedCar = carItems.filter { car in
+                        if let model = car.model {
+                            return model.lowercased().contains(searchText.lowercased())
+                        }
+                        return false
+                    }
+                } else {
+                    searching = false
+
+                    searchedCar.removeAll()
+                }
+                carCollectionView.reloadData()
     }
     
 }
@@ -116,7 +136,7 @@ extension VehiclePageController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 // Functions
-extension VehiclePageController: UISearchResultsUpdating, UISearchBarDelegate {
+extension VehiclePageController {
     
     //    REALM fetching the data
     func fetchItems() {
@@ -140,35 +160,41 @@ extension VehiclePageController: UISearchResultsUpdating, UISearchBarDelegate {
         }
     }
     
-    // SearchBar Configuration
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            searchedCar = carItems.filter { car in
-                if let model = car.model {
-                    return model.lowercased().contains(searchText.lowercased())
-                }
-                return false
-            }
-            searching = true
-        } else {
-            searchedCar.removeAll()
-            searching = false
-        }
-        carCollectionView.reloadData()
+    func setupSearchLayer() {
+        searchTextField.layer.cornerRadius = 32
+        searchTextField.layer.masksToBounds = true
+        searchTextField.tintColor = UIColor.black
     }
     
-    func configureSearchController() {
-        searchController.searchBar.placeholder = "Search for a car"
-        searchController.searchBar.layer.masksToBounds = true
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.enablesReturnKeyAutomatically = false
-        searchController.searchBar.returnKeyType = UIReturnKeyType.done
-        navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-    }
+    // SearchBar Configuration
+//    func updateSearchResults(for searchController: UISearchController) {
+//        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+//            searchedCar = carItems.filter { car in
+//                if let model = car.model {
+//                    return model.lowercased().contains(searchText.lowercased())
+//                }
+//                return false
+//            }
+//            searching = true
+//        } else {
+//            searchedCar.removeAll()
+//            searching = false
+//        }
+//        carCollectionView.reloadData()
+//    }
+    
+//    func configureSearchController() {
+//        searchController.searchBar.placeholder = "Search for a car"
+//        searchController.searchBar.layer.masksToBounds = true
+//        searchController.searchResultsUpdater = self
+//        searchController.searchBar.delegate = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.enablesReturnKeyAutomatically = false
+//        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+//        navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
+//    }
 }
 
 

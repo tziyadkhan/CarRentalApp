@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="laP-qy-oPG">
-                                <rect key="frame" x="16" y="137" width="361" height="230"/>
+                                <rect key="frame" x="16" y="203" width="361" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="layoutMargins" id="nfk-wW-BF9">
@@ -168,6 +168,20 @@
                                     <outlet property="delegate" destination="qma-vw-9lo" id="0NP-TB-yOb"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a  a car" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-5d-P4D">
+                                <rect key="frame" x="16" y="131" width="361" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" searchField="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchTextField:" destination="Zqr-ib-7Z8" eventType="editingChanged" id="SB2-Yr-p0D"/>
+                                    <action selector="searchTextField:" destination="qma-vw-9lo" eventType="editingChanged" id="nbB-HK-koU"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sIu-u3-6Gg"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -176,6 +190,7 @@
                     <connections>
                         <outlet property="carCollectionView" destination="Maf-8p-J3G" id="Bqi-3M-rCJ"/>
                         <outlet property="collectionView" destination="laP-qy-oPG" id="8Nm-oB-HP4"/>
+                        <outlet property="searchTextField" destination="3ms-5d-P4D" id="OBL-Eb-zzr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgy-cL-SsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -252,6 +267,7 @@
                                     <constraint firstAttribute="height" constant="64" id="SGk-bk-oH0"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="searchTextField:" destination="Zqr-ib-7Z8" eventType="editingChanged" id="0Ej-z1-2I5"/>
