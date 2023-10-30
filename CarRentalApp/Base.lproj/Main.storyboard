@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="3707.6335877862593" y="769.71830985915494"/>
         </scene>
-        <!--Vehicle Page Controller-->
+        <!--Vehicle-->
         <scene sceneID="ROq-0O-hcg">
             <objects>
                 <viewController storyboardIdentifier="VehiclePageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qma-vw-9lo" customClass="VehiclePageController" customModule="CarRentalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
                         <viewLayoutGuide key="safeArea" id="sIu-u3-6Gg"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rvJ-tb-T1g"/>
+                    <navigationItem key="navigationItem" title="Vehicle" id="rvJ-tb-T1g"/>
                     <connections>
                         <outlet property="carCollectionView" destination="Maf-8p-J3G" id="Bqi-3M-rCJ"/>
                         <outlet property="collectionView" destination="laP-qy-oPG" id="8Nm-oB-HP4"/>

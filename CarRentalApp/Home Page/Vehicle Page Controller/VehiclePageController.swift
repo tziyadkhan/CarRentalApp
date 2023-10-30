@@ -28,7 +28,6 @@ class VehiclePageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Car Rental"
         helper.getFilePath()
         fetchItems()
         XibRegistration()
